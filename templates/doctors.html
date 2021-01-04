@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block title %}Doctors{% endblock title %}
+
+{% block body %}
+
+{% if request.user.is_authenticated %}
+<section class="mode my-5 py-5">
+    <div class="container px-5">
+        <h1 class="data mb-3">Recommended Doctors </h1>
+        {% if doc_list %}
+        <div class="row">
+            {% for doc in doc_list %}
+            <div class="col-md-6">
+                <form action="/bookAppoint/{{doc.pk}}" method="POST" style="width: 100%;">
+                    {% csrf_token %}
+                    <div class="card bg-dark">
+                        {% if doc.specialization == 'heart' %}
+                        <div class="title mx-auto mt-2 text-danger" style="font-weight: 800;">
+                            {{doc.specialization|capfirst}} Specialist</div>
+                        {% else %}
+                        <div class="title mx-auto mt-2 text-warning" style="font-weight: 800;">
+                            {{doc.specialization|capfirst}} Specialist</div>
+                        {% endif %}
+                        <div class="card-body text-white">
+                            <h1>Name: Dr. {{doc.first_name}} {{doc.last_name}}</h1>
+                            <h1>Email: {{doc.email}}</h1>
+                            <h1>Specialization in {{doc.specialization|capfirst}}</h1>
+                        </div>
+                        <div class="form-group row text-white px-3">
+                            <label for="pat_name{{forloop.counter}}" class="col-sm-4 col-form-label">Patient
+                                Name</label>
+                            <div class="col-sm-8">
+                                {% if request.user.is_superuser %}
+                                <input class="form-control mb-2" id="pat_name{{forloop.counter}}" type="text"
+                                    name="pat_name" placeholder="Enter Patient Name" required>
+                                {% else %}
+                                <input class="form-control mb-2" id="pat_name" type="text" name="pat_name"
+                                    value="{{request.user.first_name}} {{request.user.last_name}}"
+                                    placeholder="Enter Patient Name" required>
+                                {% endif %}
+                            </div>
+                            <label for="pat_email{{forloop.counter}}" class="col-sm-4 col-form-label">Patient
+                                Email</label>
+                            <div class="col-sm-8">
+                                <input class="form-control mb-2" id="pat_email{{forloop.counter}}" type="text"
+                                    name="pat_email" value="{{request.user.email}}" placeholder="Enter Patient Email"
+                                    required>
+                            </div>
+                            <label for="time{{forloop.counter}}" class="col-sm-4 col-form-label">Appointment
+                                Date</label>
+                            <div class="col-sm-8">
+                                <input class="form-control mb-2" id="time{{forloop.counter}}" type="datetime-local"
+                                    name="timing" id="timing" required>
+                            </div>
+                            <button class="btn btn-primary mx-auto mt-3" type="submit">Book Appointment</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="data">No doctors are available....</div>
+        {% endif %}
+    </div>
+</section>
+<section class="mode my-5 py-5">
+    <div class="container px-5">
+        <h1 class="data mb-3">Our Doctors</h1>
+        {% if all_doc %}
+        <div class="row">
+            {% for doc in all_doc %}
+            <div class="col-md-6">
+                <form action="/bookAppoint/{{doc.pk}}" method="POST" style="width: 100%;">
+                    {% csrf_token %}
+                    <div class="card bg-dark">
+                        {% if doc.specialization == 'heart' %}
+                        <div class="title mx-auto mt-2 text-danger" style="font-weight: 800;">
+                            {{doc.specialization|capfirst}} Specialist</div>
+                        {% else %}
+                        <div class="title mx-auto mt-2 text-warning" style="font-weight: 800;">
+                            {{doc.specialization|capfirst}} Specialist</div>
+                        {% endif %}
+                        <div class="card-body text-white">
+                            <h1>Name: Dr. {{doc.first_name}} {{doc.last_name}}</h1>
+                            <h1>Email: {{doc.email}}</h1>
+                            <h1>Specialization in {{doc.specialization|capfirst}}</h1>
+                        </div>
+                        <div class="form-group row text-white px-3">
+                            <label for="pat_name{{forloop.counter}}" class="col-sm-4 col-form-label">Patient
+                                Name</label>
+                            <div class="col-sm-8">
+                                {% if request.user.is_superuser %}
+                                <input class="form-control mb-2" id="pat_name{{forloop.counter}}" type="text"
+                                    name="pat_name" placeholder="Enter Patient Name" required>
+                                {% else %}
+                                <input class="form-control mb-2" id="pat_name" type="text" name="pat_name"
+                                    value="{{request.user.first_name}} {{request.user.last_name}}"
+                                    placeholder="Enter Patient Name" required>
+                                {% endif %}
+                            </div>
+                            <label for="pat_email{{forloop.counter}}" class="col-sm-4 col-form-label">Patient
+                                Email</label>
+                            <div class="col-sm-8">
+                                <input class="form-control mb-2" id="pat_email{{forloop.counter}}" type="text"
+                                    name="pat_email" value="{{request.user.email}}" placeholder="Enter Patient Email"
+                                    required>
+                            </div>
+                            <label for="time{{forloop.counter}}" class="col-sm-4 col-form-label">Appointment
+                                Date</label>
+                            <div class="col-sm-8">
+                                <input class="form-control mb-2" id="time{{forloop.counter}}" type="datetime-local"
+                                    name="timing" id="timing" required>
+                            </div>
+                            <button class="btn btn-primary mx-auto mt-3" type="submit">Book Appointment</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% else %}
+<section>
+    <div class="container">
+        <h1 class="data">Please Login to Book Appointments.</h1>
+    </div>
+</section>
+{% endif %}
+
+
+{% endblock body %}

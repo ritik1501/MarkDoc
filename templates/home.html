@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+
+{% block title %}MARK{% endblock title %}
+{% block home %}active{% endblock home %}
+
+{% block body %}
+<style>
+    .header h1 {
+        font-size: 35px;
+        text-decoration: underline;
+        font-weight: 500;
+        margin: 5px 0;
+    }
+
+    .header h4 {
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 2px;
+    }
+    input, textarea{
+        border-radius: 20px;
+        color: black;
+        outline: none;
+        padding: 5px 15px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+</style>
+<section style="height: 10vh;"></section>
+<section class="mode">
+    <div class="container">
+        <div class="header">
+            <div class="row">
+                <div class="col-md-5 py-2 m-auto">
+                    <h4>Having Any Issue??</h4>
+                    <h1>No Need to Go Anywhere..</h1>
+                    <p>Meet the doctor at your own home with your phone or Laptop.</p>
+                </div>
+                <div class="col-md-6 py-2">
+                    <img src="https://p1.pxfuel.com/preview/310/517/187/adult-ambulance-background-care-cheerful-clinic-royalty-free-thumbnail.jpg"
+                        alt="Doctor" class="img-fluid m-auto">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row mx-auto my-5">
+            <div class="col-md-6 mx-auto">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbTyVWXJ20Xc04_Rw747-wGtynpUwiHuF6Qw&usqp=CAU"
+                                class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title text-white" style="text-decoration: underline; font-weight: 500;">
+                                    Online Checkups</h5>
+                                <p class="card-text text-white">Are you fearing to go outside for your checkups? Now you
+                                    need not to worry. We will provide you the all Checkups at your doorstep.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="https://static.vecteezy.com/system/resources/previews/000/425/623/non_2x/set-of-doctors-holding-first-aid-box-and-nurse-characters-vector.jpg"
+                                class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title text-white" style="text-decoration: underline; font-weight: 500;">
+                                    Book Appointment</h5>
+                                <p class="card-text text-white">This WebApp helps you to book the appointment with the
+                                    doctor. you can book the appointment with the doctor and take prescription online.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mode py-3 my-5">
+    <div class="container">
+        <h1 class="my-3" style="font-size: 30px; font-weight: 500;">How MARK Will Help You??</h1>
+        <div class="row mx-auto">
+            <div class="col-md-4 mx-auto">
+                <div class="card" style="width: 18rem; border: 0px;">
+                    <img class="card-img-top"
+                        src="https://www.scnsoft.com/blog-pictures/healthcare/doctor_apps-01_1.png"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Online Checkups</h5>
+                        <p class="card-text mb-3">Now you can take your routine checkup at your own Home. Our systems
+                            have high AI skills to analyze you.</p>
+                        <a href="/test-center" class="btn btn-primary">Test yourself</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mx-auto">
+                <div class="card" style="width: 18rem; border: 0px;">
+                    <img class="card-img-top"
+                        src="https://medicaldialogues.in/h-upload/2020/02/04/1600x960_123911-number-of-doctors.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Specialized Doctors</h5>
+                        <p class="card-text mb-3">We have huge team of specialized doctors available for your help to
+                            enjoy the life without any fear of disease.</p>
+                        <a href="/appointment" class="btn btn-primary">Contact Doctors</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem; border: 0px;">
+                    <img class="card-img-top"
+                        src="https://img.freepik.com/free-photo/group-successful-doctors-hospital_85574-5175.jpg?size=626&ext=jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Virual Sessions with Doctors</h5>
+                        <p class="card-text mb-3">You can book virtual sessions with doctor on a single click. No need
+                            to worry to go to hospital.</p>
+                        <a href="/appointment" class="btn btn-primary">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-5">
+    <div class="container">
+        <div class="card text-center text-white">
+            <div class="card-header" style="font-size: 35px;">
+                Let's Fight Against Covid-19
+            </div>
+            <div class="card-body">
+                <h1 class="card-title"></h1>
+                <p class="card-text" style="font-size: 1.2em;">Our team made an app of Covid-19 self-test. You can visit
+                    the site test yourself against covid.</p>
+            </div>
+            <div class="card-footer" style="text-decoration: underline;">
+                <a href="//covid-19-test.herokuapp.com/form" target="_blank">Covid-19-test>></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="p-5 text-white" style="background-color: #010101d8;">
+    <div class="row py-3">
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <h3 style="font-size: 30px; font-weight: 500; text-align: center;">Contact Us</h3>
+            <p class="mb-3" style="font-size: 20px; font-weight: 300; text-align: center;">Feel free to Contact Us. We will be happy to serve you.</p>
+            <form action="/contact" method="POST" style="display: flex; flex-direction: column;">
+                {% csrf_token %}
+                <input class="mb-4" type="text" placeholder="Name" name="name" required>
+                <input class="mb-4" type="email" placeholder="Email" name="email" required>
+                <textarea class="mb-4" name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+                <button class="submit" type="submit">Submit Details</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-3 my-auto p-5">
+            <img src="https://img.icons8.com/ultraviolet/30/000000/address.png"/>
+            <h2 style="font-size: 20px;">Block-1, Sharda University</h2>
+            <p>Knowledge Park, Greater Noida.</p>
+            <hr class="my-5">
+            <h4 class="my-2" style="font-size: 20px;">Email : markdoc@gmail.com</h4>
+            <h4 class="my-2" style="font-size: 20px;">Office: Greater Noida</h4>
+            <h4 class="my-2" style="font-size: 20px;">Contact number: 1800-515-717</h4>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}

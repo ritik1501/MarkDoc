@@ -1,0 +1,66 @@
+.mode {
+    background-color: #6600cc;
+    color: white;
+}
+.submit, .submit:focus{
+    border-radius: 100px;
+    background-color: #6600cc;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 20px;
+    outline: none;
+}
+.submit:focus{
+    transform: scale(1.1);
+}
+.card {
+    background-color: #6600cc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card-img {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.col-md-6 .card:hover .card-title {
+    font-size: 1.05em;
+}
+.card-body .meet-detail{
+    /* overflow: auto; */
+    margin: 10px 0;
+}
+.card-body .meet-detail h4{
+    font-size: 18px;
+    font-weight: 400;
+}
+.card-body h3{
+    font-size: 25px;
+    font-weight: 400;
+    color: red;
+}
+.card-body .meet-detail h4 span{
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+}
+.card-body .meet-detail a{
+    text-decoration: underline;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    cursor: pointer;
+}
+.data {
+    font-size: 30px;
+    text-align: center;
+}
+.form-control,
+.form-control option {
+    border-radius: 20px;
+}

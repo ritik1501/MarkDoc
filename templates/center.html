@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Test-Center
+{% endblock title %}
+
+{% block test %}active{% endblock test %}
+
+{% block body %}
+<section style="height: 10vh;"></section>
+<section class="mode p-5">
+    <h1>Hello Buddy</h1>
+</section>
+<div class="container">
+    <div id='map' style='width: 100%; height: 100vh;'></div>
+</div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoidGVybWluYXRvcjExMSIsImEiOiJjazU0MmhpY20wZG9sM2RvZjZuc3p6Yjc5In0.tyTdNpzn5orvvpPpbva4kg';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [77.1025, 28.7041],
+        zoom: 9,
+    });
+    var marker = new mapboxgl.Marker()
+        .setLngLat([77.1025, 28.7041])
+        .addTo(map);
+</script>
+{% endblock body %}
